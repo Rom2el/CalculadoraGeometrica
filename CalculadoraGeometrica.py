@@ -65,6 +65,14 @@ def menu(opcion):
 			main()
 		else:
 			print("opcion invalida\n")
+	elif (opcion>4):
+		poligono(opcion)
+		raw_input()
+		limpiar()
+		main()
+
+		
+
 
 def cuadrado(a):
  	perimetro= a * 4
@@ -86,6 +94,16 @@ def triangulo(a,b,c):
  	print ("el perimetro es: " + str(perimetro))
  	print ("el area es: " + str(round(area,3)))
 
+def poligono(lados):
+	print("NUMERO DE LADOS: "+str(lados)+"\n")
+	lado=float(input("Ingrese la longitud de lado: "))
+	angulo=360/lados
+	apotema = (lado/2)/math.tan(math.radians(angulo)/2)
+	print (apotema)
+	perimetro = lados * lado
+	area = (apotema*perimetro)/2
+	print ("el perimetro es: " + str(perimetro))
+ 	print ("el area es: " + str(round(area,3)))
 
 
 
