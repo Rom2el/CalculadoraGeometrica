@@ -1,7 +1,9 @@
 #Calculadora que nos permita calcular el area y perimetro de las figuras geometricas dadaos los lados
+
 import os
 import math
 
+#funcion que nos permite limpiar la pantalla
 def limpiar():
 	os.system('cls')
 
@@ -9,7 +11,7 @@ def main():
 	print("\n\t Calculadora Geometrica")
 	print("____________________________________________\n")
 	print("Presione 0 para salir")
-	opcion = int(input("Ingrese el numero de lados de la figra geometrica: "))
+	opcion = int(input("Ingrese el numero de lados de la figura geometrica: "))
 	if(opcion ==0):
 		exit()
 	else:
@@ -29,6 +31,7 @@ def menu(opcion):
 		b = float(input("Ingrese el lado B: "))
 		c = float(input("Ingrese el lado C: "))
 
+# Comprobamos que es un triangulo 
 		if(a + b) > c:
 			if(a + c) > b:
 				if (b + c) > a:
@@ -39,10 +42,19 @@ def menu(opcion):
 
 				else:
 					print("No es un triangulo")
+					raw_input()
+					limpiar()
+					main()
 			else:
 				print("No es un triangulo")
+				raw_input()
+				limpiar()
+				main()
 		else:
 			print("No es un triangulo")
+			raw_input()
+			limpiar()
+			main()
 	elif(opcion ==4):
 		
 		print("1. Cuadrado")
@@ -70,8 +82,10 @@ def menu(opcion):
 		raw_input()
 		limpiar()
 		main()
-
-		
+	else:
+		limpiar()
+		print("Ingrese una opcion correcta")
+		main()
 
 
 def cuadrado(a):
@@ -99,12 +113,9 @@ def poligono(lados):
 	lado=float(input("Ingrese la longitud de lado: "))
 	angulo=360/lados
 	apotema = (lado/2)/math.tan(math.radians(angulo)/2)
-	print (apotema)
 	perimetro = lados * lado
 	area = (apotema*perimetro)/2
 	print ("el perimetro es: " + str(perimetro))
  	print ("el area es: " + str(round(area,3)))
-
-
 
 main()
